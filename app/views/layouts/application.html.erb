@@ -9,6 +9,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/header.html.erb"%>
+    <main class="main">
+      <%= yield %>
+    </main>
   </body>
 </html>
