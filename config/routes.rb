@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  
+
+  resources :posts do
+    resources :comments
+  end
   get '/about', to: 'pages#about'
   get '/editor', to: 'pages#editor'
+  get '/blog', to: 'posts#index'
 
   root 'pages#home'
 
