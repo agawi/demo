@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/home'
-
+  
   get '/about', to: 'pages#about'
+  get '/editor', to: 'pages#editor'
 
   root 'pages#home'
 

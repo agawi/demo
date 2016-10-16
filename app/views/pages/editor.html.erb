@@ -1,0 +1,12 @@
+<div class="editor-container">
+  <textarea class=editor placeholder="//your code goes here">hello</textarea>
+  <span class="output"></span>
+
+  <script>
+    var text = "";
+    $(".editor").on("input", function(){
+      text = $(this).val();
+      $(".output").html(text);
+    });
+  </script>
+<div>

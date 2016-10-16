@@ -1,3 +1,38 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.editor-container{
+  margin: 30px 25px 0px;
+  //padding:0px 25px;
+  display: flex;
+  box-shadow:0px 0px 2px #00111a;
+  .editor{
+    font-size:1.1em;
+    display: block;
+    max-width:40%;
+    min-width: 40%;
+    max-height:600px;
+    min-height:600px;
+    padding:10px;
+    border:0px;
+    color:#00111a;
+
+    &:focus{
+      outline:0px;
+    }
+  }
+}
+.output{
+  width:60%;
+  border-left:1px solid #00111a;
+  //border:1px solid #092436;
+}
+
+.home-container{
+  width:100%;
+  margin:auto;
+  .main-img{
+    width:100%;
+  }
+}

@@ -13,14 +13,14 @@ html, body{
   height:70px;
   position:fixed;
   display:flex;
-  background-color: #5792b8;
+  background-color: #006699;
   width:100%;
-  box-shadow: 0px 1px 7px #092436;
+  box-shadow: 0px 1px 7px #00111a;
   .title{
     margin-top: calc(35px - 0.6em);
     font-size: 2em;
     padding-left: 0.5em;
-    color:#092436;
+    color:#00111a;//#092436;
   }
   .logo{
     height:100%;
@@ -44,11 +44,13 @@ html, body{
           height:calc(100% - 35px + 1em / 2);
           padding: calc(35px - 1em / 2) 15px 0px 15px;
           text-decoration: none;
-          background-color: #5792b8;
+          background-color: #006699;
           color:white;
           &:hover{
-            background-color: #fff;//#092436;
-            color:#092436;
+            //background-color: #fff;//#092436;
+            background: linear-gradient(to bottom, white,#006699);
+            color:#00111a;
+            //border-radius: 2px;
           }
         }
       }
