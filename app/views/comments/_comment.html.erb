@@ -7,5 +7,7 @@
     by: Anonymous
   <%end%>
 </p>
-<%=link_to "Delete", [@post, comment], method: :delete, data:{confirm:"Are you sure"}%><br>
+<% if current_user == comment.user && current_user || current_user.try(:admin?)%>
+  <%=link_to "Delete", [@post, comment], method: :delete, data:{confirm:"Are you sure"}%><br>
+<%end%>
 <%#=link_to "edit", edit_post_comment_path({post_id:@post.id})%>

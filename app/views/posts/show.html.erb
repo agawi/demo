@@ -14,7 +14,11 @@
 
   <h2>Comments</h2>
     <%= render 'comments/form.html.erb'%>
+
+    <%#= @post.comments.count %>
+  <h3><%= pluralize(@post.comments.count, "Comment")%></h3>
   <hr>
+
   <%= render @post.comments%>
   </div>
 </div>
