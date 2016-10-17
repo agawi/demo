@@ -1,0 +1,7 @@
+<%=comment.commenter%>
+<p>
+  <%=comment.body%><br>
+  <%="Comment id: #{comment.id}"%>
+</p>
+<%=link_to "Delete", [@post, comment], method: :delete, data:{confirm:"Are you sure"}%><br>
+<%#=link_to "edit", edit_post_comment_path({post_id:@post.id})%>
