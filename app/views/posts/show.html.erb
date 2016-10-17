@@ -2,23 +2,24 @@
   <p id="notice"><%= notice %></p>
   <div class="post">
 
-    <h2 class="title"><%= @post.title %></h2>
-
+  <h2 class="title"><%= @post.title %></h2>
 
   <p class="body">
     <%= @post.body %>
   </p>
+
   <%if current_user.try(:admin?)%>
     <%= link_to 'Edit', edit_post_path(@post) %>
   <%end%>
+  <div class="comments">
+    <h2 class="title">Comments</h2>
+      <%= render 'comments/form.html.erb'%>
 
-  <h2>Comments</h2>
-    <%= render 'comments/form.html.erb'%>
+      <%#= @post.comments.count %>
+    <h3 class="subtitle"><%= pluralize(@post.comments.count, "Comment")%></h3>
+    <hr>
 
-    <%#= @post.comments.count %>
-  <h3><%= pluralize(@post.comments.count, "Comment")%></h3>
-  <hr>
+    <%= render @post.comments%>
 
-  <%= render @post.comments%>
   </div>
 </div>

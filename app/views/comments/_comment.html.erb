@@ -1,6 +1,7 @@
+<div class="comment">
 <%=comment.commenter%>
 <p>
-  <%=comment.body%><br>
+  <%=comment.body%><br> <br>
   <% if comment.user %>
     <%="by: #{comment.user.user_name}"%>
   <% else%>
@@ -11,3 +12,4 @@
   <%=link_to "Delete", [@post, comment], method: :delete, data:{confirm:"Are you sure"}%><br>
 <%end%>
 <%#=link_to "edit", edit_post_comment_path({post_id:@post.id})%>
+</div>

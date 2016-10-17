@@ -1,9 +1,9 @@
 <%= form_for([@post, @post.comments.build]) do |f|%>
   <br>
-  <h3>Write comment</h3>
+  <h3 class="subtitle">Write comment</h3>
   <br>
-  <%= f.text_area :body%> <br>
+  <%= f.text_area :body, class:"text-area"%> <br>
 
-  <%=f.submit%>
+  <%=f.submit :Comment, class:"btn"%>
   <br> <br>
 <%end%>
