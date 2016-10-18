@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_post
   before_action :authenticate_user!, except: [:create]
   def create
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.build(comment_params)
     if current_user
       @comment.update_attribute(:user_id, current_user.id)
     end

@@ -1,9 +1,11 @@
 <header class="page-header">
   <%=image_tag "sakura.png", {class:"logo", alt:"logo"} %>
   <h1 class="title">Arnaud Gawinowski</h1>
+
+
   <nav class="navigation">
     <ul class="menu">
-      <li><%=link_to "Home", root_path, {class:"nav-link"}%></li>
+      <!--<li><%=link_to "Home", root_path, {class:"nav-link"}%></li>-->
       <li><%=link_to "Blog", blog_path, {class:"nav-link"}%></li>
       <li><%=link_to "About", about_path, {class:"nav-link"}%></li>
       <li><%=link_to "Editor", editor_path, {class:"nav-link"}%></li>
@@ -16,4 +18,12 @@
     </ul>
 
   </nav>
+  <script>
+  function pageTab(){
+    var path = $(location).attr('pathname');
+    var link = $("a[href=\""+path+"\"]");//addClass("current-page");
+    link.addClass("current-page");
+  }
+  pageTab();
+  </script>
 </header>

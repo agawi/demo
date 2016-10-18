@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  
+
   resources :posts do
     resources :comments
   end
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/editor', to: 'pages#editor'
   get '/blog', to: 'posts#index'
 
-  root 'pages#home'
+  root 'posts#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
