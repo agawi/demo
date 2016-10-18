@@ -21,7 +21,10 @@
   <script>
   function pageTab(){
     var path = $(location).attr('pathname');
-    var link = $("a[href=\""+path+"\"]");//addClass("current-page");
+    if (path === "/posts"){
+      path = "/blog";
+    }
+    var link = $("a[href=\""+path+"\"]");
     link.addClass("current-page");
   }
   pageTab();

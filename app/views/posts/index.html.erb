@@ -21,8 +21,10 @@
       </div>
     </div>
     <% end %>
+
+    <%if current_user.try(:admin?)%>
+      <%= link_to '+', new_post_path, class: "add-btn" %>
+    <%end%>
   </div>
-  <%if current_user.try(:admin?)%>
-    <%= link_to '+', new_post_path, class: "add-btn" %>
-  <%end%>
+
 </div>
