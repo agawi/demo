@@ -3,28 +3,47 @@
   <p id="notice"><%= notice %></p>
 
   <h1>Blog</h1>
-
+  <%if current_user.try(:admin?)%>
+    <%= link_to '+', new_post_path, class: "add-btn" %>
+  <%end%>
   <div class="posts">
+    <div class="flex-box">
     <% @posts.each do |post| %>
-    <div class="post">
-      <h2 class="title"><%= post.title %></h2>
-      <div class="flex-box">
-          <p class="body"><%= post.body %><p>
 
-        <div class="flex-item">
-          <%= link_to 'Show post', post %>
+    <div class=flex-item>
+
+    <div class="index-post">
+        <%=link_to post do%>
+        <%if post.image_file_name.nil?%>
+
+        <%else%>
+          <%= image_tag post.image.url(:large), class:"post-image"%>
+        <%end%>
+
+        <h2 class="title"><%= post.title %></h2>
+
+      <div class="flex-box post-btn-group">
+
           <% if current_user.try(:admin?)%>
-            <%= link_to 'Edit post', edit_post_path(post) %>
-            <%= link_to 'Delete post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%end%>
-        </div>
+            <div class="flex-item _a">
+              <%= link_to 'Edit', edit_post_path(post), class:"post-link" %>
+            </div>
+            <div class="flex-item _a">
+              <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"post-link"%>
+            </div>
+            <%else%>
+            <!--<div class="flex-item _full">
+              <%= link_to 'Show post', post, class:"post-link"%>
+            </div>-->
+            <%end%>
       </div>
+      <%end%>
     </div>
+  </div>
+
     <% end %>
 
-    <%if current_user.try(:admin?)%>
-      <%= link_to '+', new_post_path, class: "add-btn" %>
-    <%end%>
+  </div>
   </div>
 
 </div>

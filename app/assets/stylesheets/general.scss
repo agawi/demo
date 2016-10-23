@@ -5,6 +5,8 @@
 }
 html, body{
   position: absolute;
+  z-index: -4;
+  position: relative;
   left:0;
   top:0;
   margin:0;
@@ -16,6 +18,7 @@ html, body{
 .page-header{
   height:70px;
   position:fixed;
+  z-index: 10;
   display:flex;
   background-color: #006699;
   width:100%;
@@ -74,11 +77,16 @@ html, body{
 }
 .main{
   padding-top:70px;
+
+  z-index: -3;
+  position: relative;
 }
 
 .blog{
   width:80%;
   margin:40px auto;
+  z-index: -2;
+  position: relative;
   .add-btn{
     margin:0px 20px;
     font-size: 4em;
@@ -100,34 +108,61 @@ html, body{
   .posts{
     width:98%;
     margin:20px auto;
-    .post{
-      padding:1em;
-      background-color: #e6f7ff;
-      border-radius:5px;
+    a{
+      text-decoration: none;
+    }
+    .index-post{
+      //display:block;
+      width: 300px;
+      min-width:300px;
+      margin:50px;
+      padding:5px;
+      //background-color: #e6f7ff;
+      //border-radius:5px;
       margin-bottom:2em;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 0;
+      box-shadow: 0px 0px 1px #006699;
+      overflow: hidden;
+      .post-btn-group{
+        background-color: #67cbfe;
+      }
       .title{
+        text-align: center;
         margin:10px 0px 20px 10px;
-        font-size:2.5em;
+        font-size:250%;
         color:#006699;
+      }
+      .post-image{
+        display:block;
+        width:100%;
+        margin:auto;
       }
       .body{
         width:85%;
         padding: 10px 20px 10px 20px;
       }
-      .flex-item{
-        width:15%;
-        a{
-          margin:0;
-          font-size: 1em;
-          display: block;
-          padding:5%;
-          text-decoration:none;
-          color:#006699;
-          border-radius:5px;
-          &:hover{
-            background-color: #006699;
-            color:white;
-          }
+      ._a{
+        width: 50%;
+
+        }
+      ._full{
+        width:100%;
+      }
+      .post-link{
+        //width:33%;
+        text-align: center;
+        margin:0;
+        font-size: 1em;
+        display: block;
+        padding:15px;
+        text-decoration:none;
+        color:#006699;
+        //border-radius:5px;
+        &:hover{
+          background-color: #006699;
+          color:white;
         }
       }
     }
@@ -137,15 +172,31 @@ html, body{
 
 .flex-box{
   display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flex-item{
+
 }
 .post{
   .title{
-    margin:10px 0px 20px 0px;
+    margin:100px 0px 75px 0px;
     font-size:2.5em;
     color:#006699;
+    text-align: center;
+  }
+  .post-image{
+    //display: inline-block;
+    position: relative;
+    left:50%;
+    transform: translate(-50%, 0);
+    margin:0px auto 75px;
+    z-index: -1;
+    box-shadow: 0px 0px 5px #000;
   }
   .body{
-    width:85%;
+    width:60%;
+    margin:auto;
     padding: 10px 20px 10px 20px;
     margin-bottom: 20px;
     font-size: 1.1em;
