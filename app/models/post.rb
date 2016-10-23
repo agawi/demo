@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  attr_accessor :image_file_name
   has_many :comments, dependent: :destroy
   belongs_to :user
   has_attached_file :image, styles: {large:"600x600>", m:"300x300>", thumb: "100x100#"}
