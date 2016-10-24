@@ -4,7 +4,7 @@
 
   <h2 class="title"><%= @post.title %></h2>
   <%if !@post.image_file_name.nil?%>
-    <%= image_tag post.image.url(:large), class:"post-image"%>
+    <%= image_tag @post.image.url(:large), class:"post-image"%>
   <%end%>
   <p class="body">
     <%= @post.body %>
