@@ -9,12 +9,13 @@
   </head>
 
   <body>
-    <%= render "layouts/header.html.erb"%>
+      <%= render "layouts/header.html.erb"%>
 
-    <main class="main">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </main>
+      <main class="main">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </main>
+      <%= render "layouts/footer.html.erb"%>
   </body>
 </html>
