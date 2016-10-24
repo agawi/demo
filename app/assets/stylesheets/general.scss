@@ -324,3 +324,37 @@ html, body{
     }
   }
 }
+
+
+.pagination{
+  margin: 200px auto 10px;
+  text-align: center;
+
+  .previous_page, .next_page,
+  a, span, em{
+    background: #cceeff;
+    text-decoration: none;
+    padding:3px;
+    color:#004466;
+    font-family: helvetica, arial, verdana, sans-serif;
+    font-size: 1.1em;
+  }
+  .previous_page{
+
+  }
+  .next_page{
+  }
+  a{
+  }
+  span{
+  }
+  em{
+    background-color: #67cbfe;
+    color:#f0f0f0;
+  }
+  .disabled{
+    background-color: #6f6f6f;
+    color:white;
+    display: none;
+  }
+}
